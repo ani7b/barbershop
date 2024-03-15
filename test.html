@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Selection with Console Log</title>
+    <style>
+      /* Style for the dropdown container */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Style for the dropdown button */
+      .dropdown button {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Style for the dropdown content */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      /* Style for the dropdown options */
+      .dropdown-content label {
+        padding: 12px 16px;
+        display: block;
+      }
+
+      /* Highlight the selected option */
+      .dropdown-content label:hover {
+        background-color: #ddd;
+      }
+
+      /* Show the dropdown content when the dropdown button is clicked */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Select your favorite fruits:</h2>
+
+    <!-- Dropdown container -->
+    <div class="dropdown">
+      <!-- Dropdown button -->
+      <button>Select Fruits</button>
+
+      <!-- Dropdown content (list of fruits) -->
+      <div class="dropdown-content">
+        <label><input type="checkbox" value="Apple" /> Apple</label>
+        <label><input type="checkbox" value="Banana" /> Banana</label>
+        <label><input type="checkbox" value="Orange" /> Orange</label>
+        <label><input type="checkbox" value="Grape" /> Grape</label>
+        <label><input type="checkbox" value="Strawberry" /> Strawberry</label>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <button onclick="submitSelection()">Submit</button>
+
+    <script>
+      function submitSelection() {
+        // Get all checkboxes
+        var checkboxes = document.querySelectorAll(
+          '.dropdown-content input[type="checkbox"]:checked'
+        );
+
+        // Extract values from checkboxes
+        var selectedValues = Array.from(checkboxes).map(
+          (checkbox) => checkbox.value
+        );
+
+        // Log the selected values to the console
+        console.log("Selected Values:", selectedValues);
+      }
+    </script>
+  </body>
+</html>

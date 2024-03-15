@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  width: 85%;
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 100px;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.shop_name {
+  font-family: Chiller;
+  font-size: 4vw; /* Responsive font size */
+  color: blanchedalmond;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 15px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: blanchedalmond;
+  text-transform: uppercase;
+}
+
+.myMoto {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: rgb(250, 244, 244);
+}
+
+.myMoto h1 {
+  font-weight: bold;
+  text-shadow: 0 2px 4px #be1818;
+  font-family: Chiller;
+  font-size: 2.5vw; /* Responsive font size */
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+button {
+  width: 40%;
+  max-width: 200px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 15px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #be1818;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+span {
+  background: #500606;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+button:hover span {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar ul {
+    margin-top: 15px;
+  }
+
+  .navbar ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .shop_name {
+    font-size: 6vw;
+  }
+
+  .myMoto h1 {
+    font-size: 4vw;
+  }
+
+  button {
+    width: 80%;
+  }
+}

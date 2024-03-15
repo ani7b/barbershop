@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongo": "^0.1.0",
+    "mongodb": "^6.3.0",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node server.js start",
+    "build": "node server.js build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "name": "barber",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "http://rbregu.github.io/bbtest/",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "babel-loader": "^9.1.3",
+    "gh-pages": "^6.1.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
