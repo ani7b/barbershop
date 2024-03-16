@@ -54,8 +54,8 @@ app.get("/client-info-modify", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "client-info-modify.html"));
 });
 
-app.listen(port, ipAddress, () => {
-  console.log(`Server is listening on http://${ipAddress}:${port}`);
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
 
 const uri =
