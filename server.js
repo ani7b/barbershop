@@ -7,7 +7,7 @@ const newClient = require("./newClient");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 const port = 3000;
-const ipAddress = "192.168.100.20";
+const ipAddress = "localhost";
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
