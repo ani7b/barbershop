@@ -7,9 +7,6 @@
     "node-fetch": "^3.3.2"
   },
   "scripts": {
-    "start": "node server.js start",
-    "build": "node server.js build",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "name": "barber",
