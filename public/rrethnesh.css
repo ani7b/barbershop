@@ -64,7 +64,7 @@
   line-height: 1.5; /* Ju mund ta rregulloni vlerën sipas preferencave tuaja */
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
   .nav_bar {
     flex-direction: column;
     text-align: center;
@@ -91,5 +91,18 @@
     left: 18%;
     color: blanchedalmond;
     font-size: 15px;
+  }
+
+  .description {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-family: "Times New Roman";
+    font-size: 12px;
+    color: blanchedalmond;
+    text-align: center;
+    line-height: 1.5;
   }
 }
