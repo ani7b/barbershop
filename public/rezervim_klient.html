@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rezervime</title>
+    <link href="rezervim_klient.css" rel="stylesheet" />
+  
+  </head>
+  <body>
+    
+    
+    <div class="login_">
+      <div class="nav_bar">
+        <img src="logo.png" class="logo" />
+        <h1 class="shop_name">Barber Shop </h1>
+        
+      </div>
+      
+      <div class="dita">
+        <div class="time-label" id="emriDites"></div>
+        <button class="prev"  onclick="decrement()">◄</button>
+        <button class="next"  onclick="incrementDate()">►</button>
+        <div class="ora">
+        <button class="time-slot" id="800" onclick="handleReservation('8:00')">8:00</button>
+        <button class="time-slot" id="830" onclick="handleReservation('8:30')">8:30</button>
+        <button class="time-slot" id="900" onclick="handleReservation('9:00')">9:00</button>
+        <button class="time-slot" id="930" onclick="handleReservation('9:30')">9:30</button>
+        <button class="time-slot" id="1000" onclick="handleReservation('10:00')">10:00</button>
+        <button class="time-slot" id="1030" onclick="handleReservation('10:30')">10:30</button>
+        <button class="time-slot" id="1100" onclick="handleReservation('11:00')">11:00</button>
+        <button class="time-slot" id="1130" onclick="handleReservation('11:30')">11:30</button>
+        <button class="time-slot" id="1200" onclick="handleReservation('12:00')">12:00</button>
+        <button class="time-slot" id="1230" onclick="handleReservation('12:30')">12:30</button>
+        <button class="time-slot" id="1300" onclick="handleReservation('13:00')">13:00</button>
+        <button class="time-slot" id="1330" onclick="handleReservation('13:30')">13:30</button>
+        <button class="time-slot" id="1400" onclick="handleReservation('14:00')">14:00</button>
+        <button class="time-slot" id="1430" onclick="handleReservation('14:30')">14:30</button>
+        <button class="time-slot" id="1500" onclick="handleReservation('15:00')">15:00</button>
+        <button class="time-slot" id="1530" onclick="handleReservation('15:30')">15:30</button>
+        <button class="time-slot" id="1600" onclick="handleReservation('16:00')">16:00</button>
+        <button class="time-slot" id="1630" onclick="handleReservation('16:30')">16:30</button>
+        <button class="time-slot" id="1700" onclick="handleReservation('17:00')">17:00</button>
+        <button class="time-slot" id="1730" onclick="handleReservation('17:30')">17:30</button>
+        <button class="time-slot" id="1800" onclick="handleReservation('18:00')">18:00</button>
+        <button class="time-slot" id="1830" onclick="handleReservation('18:30')">18:30</button>
+        <button class="time-slot" id="1900" onclick="handleReservation('19:00')">19:00</button>
+        <button class="time-slot" id="1930" onclick="handleReservation('19:30')">19:30</button>
+      </div>
+    </div>
+    <script>
+      var n = 0; // You can set the initial value of n as needed
+      var data=0;
+      var dita;
+      var muaji;
+      var m=0;
+      var k=0;
+      var dataSotme = new Date();
+          function shfaqDateSotme() {
+            
+            if (n<0||n>5){
+              n=0;
+              
+            }
+              
+            
+              dita = dataSotme.getDate() + n;
+               muaji= dataSotme.getMonth() + 1; // Months start from 0, so add 1
+              var viti = dataSotme.getFullYear();
+              console.log(dita);
+              const today = new Date();
+              const totalDays = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+              if (dita>totalDays){
+                m=1;
+                dita=1;
+              }
+              else m=0;
+              muaji=muaji+m;
+              dita=dita+k;
+              var dataFormatuar = dita + '/' + muaji + '/' + viti;
+              data=dataFormatuar;
+              // Increment the day for the next date
+              var dataFormatuarNext = (dita + 1) + '/' + muaji + '/' + viti;
+
+              // Display the current and next date in HTML elements
+              document.getElementById("emriDites").innerHTML = dataFormatuar;
+              managebuttons();
+              
+              
+              
+          }
+
+          function incrementDate() {
+              n++;
+              if (m==1){
+                k++;
+              }
+              if (n>=5){
+                n=0;
+                k=0;
+                dita = dataSotme.getDate();
+              }
+              
+              shfaqDateSotme();
+              
+
+          }
+
+          function decrement() {
+              n--;
+              
+              if (m==1){
+                k--;
+                if (k<=0){
+                  k=0;
+                }
+              }
+              shfaqDateSotme();
+          }
+          shfaqDateSotme();
+         
+          
+  </script>
+    
+    
+
+    <script> 
+      function handleReservation(button) {
+        window.location.href=`/clientinfo?date=${data}&ora=${button}`;
+  }
+    </script>
+
+    <script>
+      function managebuttons() {
+        var currentDate = new Date();
+        var currentMonth=currentDate.getMonth() + 1
+      var currentDay = currentDate.getDate();
+    var currentHour = currentDate.getHours();
+    var currentMinute = currentDate.getMinutes();
+    
+    
+    
+      var i=0;
+      var currentTimeValue = currentHour * 100 + currentMinute;
+      var buttonIDS= [800, 830,900,930,1000,1030,1100,1130,1200,1230,1300,1330,1400,1430,1500,1530,1600,1630,1700,1730,1800,1830,1900,1930];
+      if (dita<=currentDay&&currentMonth>= muaji){
+        console.log(dita);
+      for (i=0;i<=23;i++){
+        if (currentTimeValue>=buttonIDS[i]+29)
+        disableButton(buttonIDS[i])
+      }
+    }
+    else{
+      for (i=0;i<=23;i++){
+      enableButton(buttonIDS[i])
+    }}
+
+
+    
+    fetch(`/getOraret?id=${data}`)
+  .then(response => response.json())  // Parse the JSON response
+  .then(data => {
+    // Log the entire data object
+    console.log('Data received from server:', data);
+    console.log(typeof(data));
+    let splitValues = data.oraret.map(item => item.split(":"));
+    let  joinedValues= splitValues.map(parts => parts.join(""));
+    for (let i=0;i<joinedValues.length;i++){
+    disableButton(joinedValues[i]);}
+    console.log(joinedValues);
+
+  })
+      function disableButton(buttonId) {
+        var button = document.getElementById(buttonId);
+        if (button) {
+          button.classList.add("disabled-button");
+          button.disabled = true;
+        }
+      }
+
+      function enableButton(buttonId) {
+        var button = document.getElementById(buttonId);
+        if (button) {
+          button.classList.add("disabled-button");
+          button.disabled = false;
+        }
+      }
+    }
+    managebuttons();
+
+  
+ 
+  //.catch(error => console.error('Error fetching oraret:', error));
+
+ </script>
+<script>
+
+  // Console log to indicate that the script is running
+
+
+// Make an AJAX request to get the oraret array from the server
+
+  
+</script>
+</script>
+    
+    </script>
+<script>
+  
+</script>
+
+  
+  
+    
+  </body>
+</html>

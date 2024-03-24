@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.login_ {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(background.jpg);
+  background-size: cover;
+}
+
+.nav_bar {
+  width: 40%;
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 150px;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.shop_name {
+  font-family: Chiller;
+  font-size: 80px;
+  color: blanchedalmond;
+}
+
+.confirmed {
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  color: blanchedalmond;
+
+  text-transform: uppercase;
+}
+.confirmed1 {
+  position: absolute;
+  top: 60%;
+  left: 28%;
+  color: blanchedalmond;
+
+  text-transform: uppercase;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  font-family: "Times New Roman";
+  font-size: 18px;
+  color: blanchedalmond;
+  text-align: center;
+  line-height: 1.5; /* Ju mund ta rregulloni vlerën sipas preferencave tuaja */
+}
+
+@media screen and (max-width: 480px) {
+  .nav_bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 82%;
+  }
+
+  .shop_name {
+    padding: 5px;
+    font-size: 23px;
+  }
+  .confirmed {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    padding: 5px;
+    font-size: 15px;
+  }
+  .confirmed1 {
+    position: absolute;
+    top: 60%;
+    left: 18%;
+    color: blanchedalmond;
+    font-size: 15px;
+  }
+}
