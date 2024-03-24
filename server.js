@@ -8,7 +8,6 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 const port = 3000;
 
-
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use("/", authRoutes);
@@ -32,7 +31,7 @@ app.get("/clientinfo", (req, res) => {
 });
 
 app.get("/rezervim", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/public", "rezervim.html"));
+  res.sendFile(path.join(__dirname, "public", "rezervim.html"));
 });
 app.get("/confirmed", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "confirmed.html"));
@@ -55,7 +54,7 @@ app.get("/client-info-modify", (req, res) => {
 });
 
 app.listen(port, () => {
-
+  console.log(`Server is listening on port ${port}`);
 });
 
 const uri =
