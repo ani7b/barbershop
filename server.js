@@ -7,7 +7,7 @@ const newClient = require("./newClient");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 const port = 3000;
-const ipAddress = "localhost";
+const ipAddress = "192.168.100.20";
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
@@ -54,8 +54,8 @@ app.get("/client-info-modify", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "client-info-modify.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+app.listen(port, ipAddress, () => {
+  console.log(`Server is listening on http://${ipAddress}:${port}`);
 });
 
 const uri =
