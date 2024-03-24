@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barber Shop Simoni</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <img src="logo.png" class="logo" />
+        <h1 class="shop_name">Barber Shop Simoni</h1>
+        <ul>
+          <li><a href="rrethnesh.html">Rreth nesh</a></li>
+          <li>
+            <a
+              href="https://www.google.com/maps/dir//Simoni+Barber+Shop/data=!4m8!4m7!1m0!1m5!1m1!1s0x135a0ba2bc8becab:0x414c53bfacadd8d9!2m2!1d20.7756534!2d40.620015699999996"
+              >Vendodhja</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/simoni.barber.shop/"
+              >Puna jonë</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="myMoto">
+        <div>
+          <button type="button" id="loginButton"><span></span>Log in</button>
+          <button type="button" id="rezervoButton">
+            <span></span>REZERVO TANI
+          </button>
+          <button type="button" id="rezervimiim">
+            <span></span>Rezervimi im
+          </button>
+          <script>
+            document
+              .getElementById("loginButton")
+              .addEventListener("click", function () {
+                window.location.href = "/login";
+              });
+            document
+              .getElementById("rezervoButton")
+              .addEventListener("click", function () {
+                window.location.href = "/rezervim_klient";
+              });
+            document
+              .getElementById("rezervimiim")
+              .addEventListener("click", function () {
+                window.location.href = "/kerko_rezervim.html";
+              });
+          </script>
+        </div>
+        <h1 class="moto">Stil dhe Kujdes Ku Çdo Prerje Është Një Art</h1>
+      </div>
+    </div>
+  </body>
+</html>
